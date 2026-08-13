@@ -4,126 +4,145 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anchor Point Labs — I build people who build agents</title>
-<meta name="description" content="Anchor Point Labs is home to the C.O.R.E method and the Anchor Point Method. Training teams to prompt with C.O.R.E, build their own Anchor Files, and operate AI with judgment.">
+<meta name="description" content="Anchor Point Labs: the C.O.R.E method, the Anchor Point Method, Artificial Wisdom. Training teams to prompt, build context, and operate AI with judgment.">
 <style>
   :root {
-    --navy: #14142a;
-    --navy-2: #1d1d38;
-    --ink: #f2f1f7;
-    --muted: #a5a3ba;
+    --bg: #13131f;
+    --ink: #f4f3f6;
+    --muted: #9a98ad;
+    --faint: #5c5a70;
     --orange: #ff9548;
-    --blue: #4d9fff;
-    --line: rgba(242,241,247,.10);
-    --radius: 14px;
+    --green: #7fd8a4;
+    --red: #ff7a7a;
+    --line: rgba(244,243,246,.12);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--navy);
+    background: var(--bg);
     color: var(--ink);
     font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: inherit; }
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 32px; }
-  section { padding: 104px 0; border-top: 1px solid var(--line); }
-  .kicker {
-    font-size: 13px; font-weight: 700; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--orange); margin-bottom: 18px;
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 36px; }
+
+  /* TOP BAR */
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(19,19,31,.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
-  h1, h2 { line-height: 1.12; letter-spacing: -0.02em; font-weight: 750; }
-  h1 { font-size: clamp(40px, 7vw, 72px); }
-  h2 { font-size: clamp(28px, 4.5vw, 46px); margin-bottom: 22px; }
-  p { color: var(--muted); }
-  .lead { font-size: 19px; max-width: 640px; }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .topbar .role { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .topbar .role b { color: var(--orange); }
+  .topbar nav { display: flex; gap: 28px; }
+  .topbar nav a { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .15s; }
+  .topbar nav a:hover { color: var(--ink); }
+  .topbar .yr { font-size: 12px; color: var(--faint); letter-spacing: .08em; }
 
   /* HERO */
-  header { padding: 148px 0 112px; border-bottom: 1px solid var(--line); }
-  .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 56px; }
-  .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--orange); }
-  .brand span { font-weight: 700; letter-spacing: .04em; }
-  header .sub { margin-top: 24px; font-size: 21px; max-width: 620px; }
-  header .who { margin-top: 40px; color: var(--muted); font-size: 15px; }
-  header .who b { color: var(--ink); font-weight: 600; }
-
-  /* METHOD — three layers */
-  .layer {
-    display: grid; grid-template-columns: 220px 1fr; gap: 32px;
-    padding: 40px 0; border-top: 1px solid var(--line);
+  .hero { padding: 140px 0 120px; border-bottom: 1px solid var(--line); }
+  .hero .name {
+    font-size: clamp(64px, 13vw, 150px);
+    font-weight: 800; letter-spacing: -0.035em; line-height: .95;
   }
-  .layer:first-of-type { border-top: none; }
-  .layer h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
-  .layer .tag { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 700;
-    letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
-  .layer p { font-size: 17px; }
-  .layer .quote { margin-top: 12px; font-style: italic; color: var(--ink); }
-
-  /* AGENTS — dual cards */
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .card {
-    background: var(--navy-2); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 36px;
+  .hero .name .dot { color: var(--orange); }
+  .hero .tagline {
+    margin-top: 28px; font-size: clamp(22px, 3.4vw, 40px);
+    font-weight: 750; letter-spacing: -0.01em; line-height: 1.15;
   }
-  .card h3 { font-size: 24px; margin-bottom: 6px; }
-  .card .lineage { font-size: 13px; color: var(--orange); font-weight: 700;
-    letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px; display: block; }
-  .card p { font-size: 16px; }
+  .hero .tagline span { color: var(--orange); }
+  .hero .bio { margin-top: 22px; font-size: 18px; color: var(--muted); max-width: 620px; }
+  .hero .meta { margin-top: 48px; display: flex; gap: 40px; flex-wrap: wrap; }
+  .hero .meta p { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+  .hero .meta p b { color: var(--ink); display: block; margin-top: 6px; letter-spacing: .02em; font-weight: 600; text-transform: none; font-size: 15px; }
+  .hero .meta p.avail b { color: var(--orange); }
+  .hero .meta p.avail b::after { content: " \2199"; }
 
-  /* SKILLS — good vs bad */
-  .goodbad { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; }
-  .col { background: var(--navy-2); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 36px; }
-  .col h3 { font-size: 15px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 22px; }
-  .col .good { color: #7fd8a4; } .col .bad { color: #ff6f6f; }
-  .row { padding: 13px 0; border-top: 1px solid var(--line); }
-  .row:first-of-type { border-top: none; }
-  .row b { display: block; font-size: 16px; }
-  .row span { font-size: 14px; color: var(--muted); }
+  /* SECTIONS */
+  section { padding: 110px 0; border-bottom: 1px solid var(--line); }
+  .kicker {
+    display: flex; align-items: baseline; gap: 12px;
+    font-size: 14px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .kicker .star { color: var(--orange); font-size: 16px; }
+  .kicker .num { color: var(--orange); }
+  .sec-title { font-size: clamp(30px, 4.6vw, 52px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+  .sec-sub { font-size: 17px; color: var(--muted); max-width: 620px; }
 
-  /* PROOF — before/after */
-  .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .panel { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-  .panel .head { padding: 14px 24px; font-size: 13px; font-weight: 700;
-    letter-spacing: .12em; text-transform: uppercase; }
-  .panel.before .head { background: rgba(255,111,111,.12); color: #ff6f6f; }
-  .panel.after .head { background: rgba(127,216,164,.12); color: #7fd8a4; }
-  .panel .body { padding: 28px 24px; font-size: 15px; }
-  .panel .body .prompt { color: var(--ink); font-family: inherit; white-space: pre-wrap; }
-  .panel .body .output { margin-top: 16px; color: var(--muted); font-size: 14px; }
-  .panel.after .body .output { color: var(--ink); }
+  /* WORK */
+  .work-list { margin-top: 56px; }
+  .work-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 40px 8px; border-top: 1px solid var(--line);
+    transition: padding-left .18s ease;
+  }
+  .work-item:last-child { border-bottom: 1px solid var(--line); }
+  .work-item:hover { padding-left: 20px; }
+  .work-item .t { font-size: clamp(26px, 4vw, 44px); font-weight: 800; letter-spacing: -0.02em; }
+  .work-item .t em { font-style: normal; color: var(--orange); }
+  .work-item .cat { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: right; white-space: nowrap; }
+  .work-item .desc { font-size: 15px; color: var(--muted); margin-top: 8px; max-width: 560px; }
 
-  /* SOURCES */
-  .sources { list-style: none; }
-  .sources li { padding: 18px 0; border-top: 1px solid var(--line); display: flex;
-    justify-content: space-between; gap: 24px; align-items: baseline; }
-  .sources li:first-child { border-top: none; }
-  .sources .title { font-size: 17px; font-weight: 600; }
-  .sources .credit { font-size: 14px; color: var(--muted); white-space: nowrap; }
+  /* CAPABILITIES */
+  .caps { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .cap { padding: 44px 36px; border-top: 1px solid var(--line); }
+  .cap:nth-child(odd) { border-right: 1px solid var(--line); }
+  .cap:nth-child(1), .cap:nth-child(2) { border-top: none; }
+  .cap h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .cap h3 span { color: var(--orange); margin-right: 8px; }
+  .cap p { font-size: 15px; color: var(--muted); }
+
+  /* ARCHETYPES */
+  .arch { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .arch .col { border: 1px solid var(--line); border-radius: 16px; padding: 38px 34px; }
+  .arch .col h3 { font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 24px; }
+  .arch .be h3 { color: var(--green); }
+  .arch .no h3 { color: var(--red); }
+  .arch .row { padding: 15px 0; border-top: 1px solid var(--line); }
+  .arch .row:first-of-type { border-top: none; }
+  .arch .row b { display: block; font-size: 17px; font-weight: 700; }
+  .arch .row span { font-size: 14px; color: var(--muted); }
+  .blockquote { margin: 80px auto 0; max-width: 780px; text-align: center; }
+  .blockquote .q { font-size: clamp(24px, 3.6vw, 40px); font-weight: 750; letter-spacing: -0.02em; line-height: 1.25; }
+  .blockquote .q em { font-style: normal; color: var(--orange); }
+  .blockquote .by { margin-top: 20px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+  .sources-micro { margin-top: 56px; text-align: center; font-size: 12px; color: var(--faint); line-height: 2; }
+  .sources-micro a { border-bottom: 1px solid var(--faint); }
+  .sources-micro a:hover { color: var(--muted); border-color: var(--muted); }
 
   /* CONTACT */
-  .contact-line { font-size: 22px; margin-bottom: 28px; }
-  .contact-line a { color: var(--orange); text-decoration: none; border-bottom: 2px solid rgba(255,149,72,.4); }
-  .contact-line a:hover { border-bottom-color: var(--orange); }
-  .links { display: flex; gap: 18px; flex-wrap: wrap; }
-  .btn {
-    display: inline-block; padding: 13px 26px; border-radius: 10px;
-    border: 1px solid var(--line); font-weight: 600; font-size: 15px;
-    text-decoration: none; transition: border-color .15s, background .15s;
+  .contact .big { font-size: clamp(40px, 7vw, 84px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; }
+  .contact .big span { color: var(--orange); display: block; }
+  .contact .details { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .contact .details p { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+  .contact .details a, .contact .details .v {
+    display: block; margin-top: 8px; font-size: 16px; color: var(--ink);
+    font-weight: 600; letter-spacing: 0; text-transform: none;
+    overflow-wrap: anywhere;
   }
-  .btn:hover { border-color: var(--orange); }
-  .btn.primary { background: var(--orange); color: #14142a; border-color: var(--orange); }
-  .btn.primary:hover { background: #ffa86a; }
+  .contact .details a:hover { color: var(--orange); }
 
-  footer { padding: 48px 0 64px; border-top: 1px solid var(--line); }
-  footer p { font-size: 14px; }
-  footer .built { color: var(--ink); }
+  footer { padding: 44px 0 56px; }
+  footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer p { font-size: 13px; color: var(--faint); letter-spacing: .06em; }
+  footer .gov { color: var(--muted); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  footer .gov b { color: var(--orange); }
 
-  @media (max-width: 760px) {
-    section { padding: 72px 0; }
-    header { padding: 104px 0 80px; }
-    .layer, .cards, .goodbad, .proof { grid-template-columns: 1fr; }
-    .sources li { flex-direction: column; gap: 4px; }
+  @media (max-width: 780px) {
+    .hero { padding: 96px 0 80px; }
+    section { padding: 76px 0; }
+    .caps { grid-template-columns: 1fr; }
+    .cap { border-right: none !important; border-top: 1px solid var(--line); }
+    .cap:first-child { border-top: none; }
+    .arch { grid-template-columns: 1fr; }
+    .contact .details { grid-template-columns: 1fr 1fr; }
+    .work-item { flex-direction: column; align-items: flex-start; }
+    .work-item .cat { text-align: left; }
+    .topbar nav { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; scroll-behavior: auto !important; }
@@ -132,155 +151,136 @@
 </head>
 <body>
 
-<header>
+<div class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span><span>Anchor Point Labs</span></div>
-    <h1>I build people<br>who build agents.</h1>
-    <p class="sub">Training teams to prompt with C.O.R.E, build their own Anchor Files, and operate AI with judgment.</p>
-    <p class="who">— <b>Iskandar</b>, AI educator</p>
+    <p class="role">AI Educator <b>·</b> Agent Trainer</p>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#caps">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="yr">© 2026</p>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 class="name">ISKANDAR<span class="dot">.</span></h1>
+    <p class="tagline">I build people<br>who build <span>agents.</span></p>
+    <p class="bio">Anchor Point Labs — training teams to prompt with C.O.R.E, build their own Anchor Files, and operate AI with judgment. Adjunct lecturer teaching WSQ-accredited AI courses.</p>
+    <div class="meta">
+      <p>Based in<b>Singapore</b></p>
+      <p class="avail">Availability<b>Available for training &amp; collaborations</b></p>
+    </div>
   </div>
 </header>
 
-<section id="purpose">
+<section id="work">
   <div class="wrap">
-    <p class="kicker">Purpose</p>
-    <h2>AI as a partner, not a search engine.</h2>
-    <p class="lead">Anchor Point Labs is home to figuring out the best way to use AI as a partner, not a search engine.</p>
-    <p class="lead" style="margin-top:14px">Iskandar is an adjunct lecturer teaching WSQ-accredited AI courses. This site introduces the method, the agents, and the skills he both uses and teaches.</p>
-  </div>
-</section>
-
-<section id="method">
-  <div class="wrap">
-    <p class="kicker">The Method</p>
-    <h2>Three layers.</h2>
-    <div class="layer">
-      <div>
-        <h3>C.O.R.E</h3>
-        <span class="tag">Prompt Engineering</span>
-      </div>
-      <div>
-        <p>A four-stage prompt system: Context, Objective, Reasoning, Evaluation. Turns vague asks into engineered briefs.</p>
-      </div>
-    </div>
-    <div class="layer">
-      <div>
-        <h3>Anchor Files</h3>
-        <span class="tag">Context Engineering</span>
-      </div>
-      <div>
-        <p>Distilled files — identity, voice, knowledge — that make any AI instantly competent in your world.</p>
-        <p class="quote">“Tool is replaceable. Files are forever.”</p>
-      </div>
-    </div>
-    <div class="layer">
-      <div>
-        <h3>Artificial Wisdom</h3>
-        <span class="tag">Agent Engineering</span>
-      </div>
-      <div>
-        <p>Artificial intelligence with human judgment. Iskandar finds, curates, and creates skills for agents — skills that work with everyday AI, too.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="agents">
-  <div class="wrap">
-    <p class="kicker">The Agents</p>
-    <h2>Two ways to work with AI.</h2>
-    <p class="lead" style="margin-bottom:36px">Harvard/BCG research found top AI performers come in two types: Centaurs — who split work between human and AI with clear handoffs — and Cyborgs — who weave AI into every step. Nobody teaches you how to become one. The Anchor Point Method does.</p>
-    <div class="cards">
-      <div class="card">
-        <span class="lineage">The Builder · the Centaur</span>
-        <h3>Splits the work.</h3>
-        <p>Designs the agent, the boundaries, and the handoffs. Every agent starts with a clear brief and clear limits.</p>
-      </div>
-      <div class="card">
-        <span class="lineage">The Operator · the Cyborg</span>
-        <h3>Stays in the loop.</h3>
-        <p>Works fused with the agent at every step — iterates, steers, evaluates. The human never leaves the cockpit.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <p class="kicker">The Skills</p>
-    <h2>Artificial Wisdom for managers.</h2>
-    <p class="lead" style="margin-bottom:36px">A running series of skills for managers: how to operate AI with judgment.</p>
-    <div class="goodbad">
-      <div class="col">
-        <h3 class="good">Be these</h3>
-        <div class="row"><b>The Builder</b><span>designs agents, boundaries, and handoffs</span></div>
-        <div class="row"><b>The Operator</b><span>works fused with agents in the loop</span></div>
-      </div>
-      <div class="col">
-        <h3 class="bad">Not these</h3>
-        <div class="row"><b>The Ghost</b><span>uses AI invisibly, with zero judgment</span></div>
-        <div class="row"><b>The Peon</b><span>no process; unstructured AI users perform 19pp worse (Harvard/BCG)</span></div>
-        <div class="row"><b>The Parrot</b><span>passes data along, generates no meaning</span></div>
-        <div class="row"><b>The Zombie</b><span>never thinks first; the thinking atrophies</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="proof">
-  <div class="wrap">
-    <p class="kicker">Proof</p>
-    <h2>Same task, two ways.</h2>
-    <div class="proof">
-      <div class="panel before">
-        <div class="head">Before</div>
-        <div class="body">
-          <p class="prompt">“Write an article about AI for my company.”</p>
-          <p class="output">“In today's rapidly evolving digital landscape, artificial intelligence is transforming the way businesses operate. Companies must embrace innovation to stay ahead of the curve…”</p>
+    <p class="kicker"><span class="num">01</span> <span class="star">✳️</span> Selected Work</p>
+    <h2 class="sec-title">The method is the portfolio.</h2>
+    <p class="sec-sub">Three frameworks, refined in the classroom, built for teams.</p>
+    <div class="work-list">
+      <a class="work-item" href="#caps">
+        <div>
+          <div class="t">C.O.R.E<em>.</em></div>
+          <p class="desc">A four-stage prompt system: Context, Objective, Reasoning, Evaluation. Turns vague asks into engineered briefs.</p>
         </div>
-      </div>
-      <div class="panel after">
-        <div class="head">After</div>
-        <div class="body">
-          <p class="prompt">“You are writing for mid-level managers at a Singapore logistics firm. Context: they run daily ops and fear AI replacing their judgment. Objective: an 800-word article on the Cockpit Rule — when to delegate to AI, collaborate, or stay manual. Reasoning: one real scenario per mode. Evaluation: no hype words, no ‘revolutionise’, every claim with an example.”</p>
-          <p class="output">“There are three ways to work with AI. Most people only know one. The spreadsheet cleanup took two hours by hand — or fifteen minutes on autopilot. The client pitch needed both of us. The angry email stays with you…”</p>
+        <p class="cat">Prompt Engineering</p>
+      </a>
+      <a class="work-item" href="#caps">
+        <div>
+          <div class="t">Anchor Files</div>
+          <p class="desc">Distilled files — identity, voice, knowledge — that make any AI instantly competent in your world.</p>
         </div>
+        <p class="cat">Context Engineering</p>
+      </a>
+      <a class="work-item" href="#caps">
+        <div>
+          <div class="t">Artificial Wisdom</div>
+          <p class="desc">Artificial intelligence with human judgment. Skills for agents — found, curated, created.</p>
+        </div>
+        <p class="cat">Agent Engineering</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="caps">
+  <div class="wrap">
+    <p class="kicker"><span class="num">02</span> <span class="star">✳️</span> Capabilities</p>
+    <h2 class="sec-title">What I do for teams.</h2>
+    <p class="sec-sub">Four things, done properly, with proof behind every claim.</p>
+    <div class="caps">
+      <div class="cap">
+        <h3><span>01</span>Training</h3>
+        <p>WSQ-accredited AI courses — GT public and AT corporate tracks, taught with real prompts and real outputs.</p>
+      </div>
+      <div class="cap">
+        <h3><span>02</span>Skills Curation</h3>
+        <p>The Artificial Wisdom series: a running library of manager skills for operating AI with judgment.</p>
+      </div>
+      <div class="cap">
+        <h3><span>03</span>Context Building</h3>
+        <p>The A1–A5 Anchor Files and souls.md distillation — your AI, competent in your world from day one.</p>
+      </div>
+      <div class="cap">
+        <h3><span>04</span>Judgment Coaching</h3>
+        <p>The Cockpit Rule: knowing when to delegate to AI, collaborate with it, or stay manual.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="sources">
+<section id="arch">
   <div class="wrap">
-    <p class="kicker">Sources &amp; Inspiration</p>
-    <h2>Stand on cited shoulders.</h2>
-    <ul class="sources">
-      <li><span class="title">The Cockpit Rule</span><span class="credit">popularized by <a href="https://www.jeffsu.org/the-4-skills-ai-cant-replace/">Jeff Su</a></span></li>
-      <li><span class="title">Centaurs &amp; Cyborgs</span><span class="credit">Dell'Acqua et al., Harvard/BCG (2023)</span></li>
-      <li><span class="title">The cost-benefit of delegation</span><span class="credit">Ethan Mollick</span></li>
-      <li><span class="title">Workflow beats a single prompt (48% → 95%)</span><span class="credit">Andrew Ng</span></li>
-    </ul>
+    <p class="kicker"><span class="num">03</span> <span class="star">✳️</span> The Archetypes</p>
+    <h2 class="sec-title">Be these. Not these.</h2>
+    <p class="sec-sub">Harvard/BCG research found the top AI performers are Centaurs and Cyborgs. The rest fall into these traps.</p>
+    <div class="arch">
+      <div class="col be">
+        <h3>Be these</h3>
+        <div class="row"><b>The Builder · the Centaur</b><span>Designs agents, boundaries, and handoffs. Every agent starts with a clear brief and clear limits.</span></div>
+        <div class="row"><b>The Operator · the Cyborg</b><span>Works fused with the agent at every step — iterates, steers, evaluates. Never leaves the cockpit.</span></div>
+      </div>
+      <div class="col no">
+        <h3>Not these</h3>
+        <div class="row"><b>The Ghost</b><span>Uses AI invisibly, with zero judgment.</span></div>
+        <div class="row"><b>The Peon</b><span>No process — unstructured AI users perform 19pp worse.</span></div>
+        <div class="row"><b>The Parrot</b><span>Passes data along, generates no meaning.</span></div>
+        <div class="row"><b>The Zombie</b><span>Never thinks first — the thinking atrophies.</span></div>
+      </div>
+    </div>
+    <div class="blockquote">
+      <p class="q">“Tool is <em>replaceable.</em><br>Files are forever.”</p>
+      <p class="by">— Iskandar</p>
+    </div>
+    <p class="sources-micro">
+      Method grounded in: Centaurs &amp; Cyborgs — Dell'Acqua et al., Harvard/BCG (2023) ·
+      The Cockpit Rule — popularized by <a href="https://www.jeffsu.org/the-4-skills-ai-cant-replace/">Jeff Su</a> ·
+      The cost-benefit of delegation — Ethan Mollick ·
+      Workflow beats a single prompt — Andrew Ng
+    </p>
   </div>
 </section>
 
-<section id="contact">
+<section class="contact" id="contact">
   <div class="wrap">
-    <p class="kicker">Contact</p>
-    <h2>Work with me.</h2>
-    <p class="contact-line"><a href="mailto:thegovernor@anchorpointlabs.sg">thegovernor@anchorpointlabs.sg</a></p>
-    <div class="links">
-      <a class="btn primary" href="mailto:thegovernor@anchorpointlabs.sg">Work with me</a>
-      <a class="btn" href="https://www.linkedin.com/in/iskandarj/">LinkedIn</a>
-      <a class="btn" href="https://github.com/anchorpointlabs/anchor-files">Anchor Files</a>
-      <a class="btn" href="https://github.com/anchorpointlabs/agent-skills">Agent Skills</a>
+    <p class="kicker"><span class="num">04</span> <span class="star">✳️</span> Let's Create</p>
+    <h2 class="big">Something<span>extraordinary.</span></h2>
+    <div class="details">
+      <p>Email<a href="mailto:thegovernor@anchorpointlabs.sg">thegovernor@anchorpointlabs.sg</a></p>
+      <p>LinkedIn<a href="https://www.linkedin.com/in/iskandarj/">linkedin.com/in/iskandarj</a></p>
+      <p>GitHub<a href="https://github.com/anchorpointlabs">github.com/anchorpointlabs</a></p>
+      <p>Location<span class="v">Singapore</span></p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p class="built">Built by an agent. Governed by a human.</p>
-    <p style="margin-top:8px">© 2026 Anchor Point Labs / The Garrison Collective.</p>
+    <p>© 2026 Anchor Point Labs / The Garrison Collective</p>
+    <p class="gov">Built by an agent. <b>Governed by a human.</b></p>
   </div>
 </footer>
 
