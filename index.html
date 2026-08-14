@@ -125,6 +125,15 @@
     overflow-wrap: anywhere;
   }
   .contact .details a:hover { color: var(--orange); }
+  .links { margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 28px; border-radius: 10px;
+    border: 1px solid var(--line); font-weight: 600; font-size: 15px;
+    transition: border-color .15s, background .15s;
+  }
+  .btn:hover { border-color: var(--orange); }
+  .btn.primary { background: var(--orange); color: #13131f; border-color: var(--orange); }
+  .btn.primary:hover { background: #ffa86a; }
 
   footer { padding: 44px 0 56px; }
   footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -273,6 +282,12 @@
       <p>LinkedIn<a href="https://www.linkedin.com/in/iskandarj/">linkedin.com/in/iskandarj</a></p>
       <p>GitHub<a href="https://github.com/anchorpointlabs">github.com/anchorpointlabs</a></p>
       <p>Location<span class="v">Singapore</span></p>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="mailto:thegovernor@anchorpointlabs.sg">Work with me</a>
+      <a class="btn" href="https://github.com/anchorpointlabs/prompt-playbook">Prompt Playbook</a>
+      <a class="btn" href="https://github.com/anchorpointlabs/anchor-files">Anchor Files</a>
+      <a class="btn" href="https://github.com/anchorpointlabs/agent-skills">Agent Skills</a>
     </div>
   </div>
 </section>
